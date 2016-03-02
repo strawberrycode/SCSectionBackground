@@ -18,6 +18,7 @@
 		AC7B240C1C6DFFE100504B38 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B240B1C6DFFE100504B38 /* Extensions.swift */; };
 		AC7B240E1C6DFFE800504B38 /* SectionBackgroundFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B240D1C6DFFE800504B38 /* SectionBackgroundFlowLayout.swift */; };
 		AC7B24101C6E04C300504B38 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B240F1C6E04C300504B38 /* ExampleViewController.swift */; };
+		C19932761C866FFC00CCC702 /* ExampleFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19932751C866FFC00CCC702 /* ExampleFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		AC7B240B1C6DFFE100504B38 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AC7B240D1C6DFFE800504B38 /* SectionBackgroundFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionBackgroundFlowLayout.swift; sourceTree = "<group>"; };
 		AC7B240F1C6E04C300504B38 /* ExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
+		C19932751C866FFC00CCC702 /* ExampleFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				AC7B24091C6DFFB000504B38 /* SectionBackgroundCollectionViewController.swift */,
 				AC7B240D1C6DFFE800504B38 /* SectionBackgroundFlowLayout.swift */,
 				AC7B240F1C6E04C300504B38 /* ExampleViewController.swift */,
+				C19932751C866FFC00CCC702 /* ExampleFlowLayout.swift */,
 			);
 			path = SCSectionBackground;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				AC7B240A1C6DFFB000504B38 /* SectionBackgroundCollectionViewController.swift in Sources */,
 				AC7B23D81C6DFD7800504B38 /* AppDelegate.swift in Sources */,
 				AC7B240C1C6DFFE100504B38 /* Extensions.swift in Sources */,
+				C19932761C866FFC00CCC702 /* ExampleFlowLayout.swift in Sources */,
 				AC7B24101C6E04C300504B38 /* ExampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

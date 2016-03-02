@@ -31,6 +31,11 @@ class ExampleViewController: UIViewController, UICollectionViewDataSource, UICol
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        collectionView?.collectionViewLayout.invalidateLayout()
+    }
 
     /*
     // MARK: - Navigation
@@ -43,12 +48,15 @@ class ExampleViewController: UIViewController, UICollectionViewDataSource, UICol
     */
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
+        return 2
     }
     
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        if (section % 2 == 0) {
+            return 6
+        }
+        return 12
     }
     
     
@@ -57,7 +65,7 @@ class ExampleViewController: UIViewController, UICollectionViewDataSource, UICol
         
         // Configure the cell
         cell.backgroundColor = UIColor.whiteColor()
-        
+        cell.setBorder(UIColor.grayColor().colorWithAlphaComponent(0.5))
         return cell
     }
 
