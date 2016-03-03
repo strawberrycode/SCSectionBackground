@@ -1,7 +1,9 @@
 # UICollectionView section background
 
-This project shows how to apply colour to background sections (or cells) on a `UICollectionView`. The code is written in Swift, and inspired by Eric Chapman's article (Objective-C).
+This project shows how to apply colour to background sections (or cells) on a `UICollectionView`. The code is written in Swift, and inspired by Eric [Chapman's article](http://www.ericjchapman.com/ios-changing-the-section-background-color-in-a-uicollectionview.html) (Objective-C [GitHub project](https://github.com/ericchapman/ios_decoration_view)).
 You can apply different colours according to the `NSIndexPath` of the cells. Here is an example of a `UICollectionView` 4 sections, 3 cells with green background on the even sections and 7 cells on a blue background on the odd ones.
+
+![Section Background in UICollectionView](/Images/SCSectionBackground_small.png?raw=true "Section Background in UICollectionView")
 
 
 ## How does it work?
