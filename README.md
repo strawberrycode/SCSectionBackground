@@ -13,33 +13,37 @@ The idea is to override `UICollectionViewLayoutAttributes` to add a color attrib
 And then override `UICollectionReusableView` apply the color to the view background. Easy peasy :)
 
 ```
-class SCSBCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes { 
-    var color: UIColor = UIColor.whiteColor()
+class SCSBCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes {
+    var color: UIColor = .white
+    override func copy(with zone: NSZone? = nil) -> Any {
 
-    override func copyWithZone(zone: NSZone) -> AnyObject {
-        let newAttributes: SCSBCollectionViewLayoutAttributes = super.copyWithZone(zone) as! SCSBCollectionViewLayoutAttributes
-        newAttributes.color = self.color.copyWithZone(zone) as! UIColor
+        let newAttributes: SCSBCollectionViewLayoutAttributes = super.copy(with: zone) as! SCSBCollectionViewLayoutAttributes
+        newAttributes.color = self.color.copy(with: zone) as! UIColor
         return newAttributes
     }
 }
+
 class SCSBCollectionReusableView : UICollectionReusableView {
-    override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {       
-        super.applyLayoutAttributes(layoutAttributes)
-        let scLayoutAttributes = layoutAttributes as! SCSBCollectionViewLayoutAttributes self.backgroundColor =         scLayoutAttributes.color
+
+override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
+    super.apply(layoutAttributes)
+
+    let scLayoutAttributes = layoutAttributes as! SCSBCollectionViewLayoutAttributes
+    self.backgroundColor = scLayoutAttributes.color
+    
     }
-}
-```
+}```
 
 ## How to use it? 
 All this happens in the `UICollectionViewFlowLayout` used on your `UIcollectionView`. Here is an example of `layoutAttributesForElementsInRect`:
 ```
 // Create decoration attributes
-let decorationAttributes = SCSBCollectionViewLayoutAttributes(forDecorationViewOfKind: "sectionBackground", withIndexPath: attr.indexPath)
+let decorationAttributes = SCSBCollectionViewLayoutAttributes(forDecorationViewOfKind: "sectionBackground", with: attr.indexPath)
 // Set the color(s)
 if (attr.indexPath.section % 2 == 0) {
-    decorationAttributes.color = UIColor.greenColor().colorWithAlphaComponent(0.5)
-} else {
-    decorationAttributes.color = UIColor.blueColor().colorWithAlphaComponent(0.5)
+        decorationAttributes.color = UIColor.green.withAlphaComponent(0.5)
+    } else {
+    decorationAttributes.color = UIColor.blue.withAlphaComponent(0.5)
 }
 ```
 You will find all the details in the [SectionBackgroundFlowLayout.swift file](https://github.com/strawberrycode/SCSectionBackground/blob/master/SCSectionBackground/SectionBackgroundFlowLayout.swift) and if you want more details, please have a look at my the article I've written about it: [How to create a Section Background in a UICollectionView in Swift](http://bit.ly/1oQuC7I).
