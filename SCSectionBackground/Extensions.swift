@@ -13,7 +13,7 @@ extension UIView {
     
     func setBorder(color: UIColor, width: CGFloat = 1.0) {
         
-        self.layer.borderColor = color.CGColor
+        self.layer.borderColor = color.cgColor
         self.layer.borderWidth = width
     }
     
