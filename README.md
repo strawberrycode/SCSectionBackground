@@ -32,7 +32,8 @@ override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
     self.backgroundColor = scLayoutAttributes.color
     
     }
-}```
+}
+```
 
 ## How to use it? 
 All this happens in the `UICollectionViewFlowLayout` used on your `UIcollectionView`. Here is an example of `layoutAttributesForElementsInRect`:
