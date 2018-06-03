@@ -19,10 +19,10 @@ class SectionBackgroundCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
         
         // Register cell classes
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
         // Do any additional setup after loading the view.
-        self.collectionView?.backgroundColor = UIColor.whiteColor() // white for the example with transparency  -- UIColor.clearColor()
+        self.collectionView?.backgroundColor = UIColor.white // white for the example with transparency  -- UIColor.clearColor()
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,34 +30,33 @@ class SectionBackgroundCollectionViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         collectionView?.collectionViewLayout.invalidateLayout()
     }
     
     // MARK: UICollectionViewDataSource
-    
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 4
     }
     
-    
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (section % 2 == 0) {
             return 3
         }
         return 7
     }
-    
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath )
         
         // Configure the cell
         cell.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        cell.setBorder(UIColor.redColor())
+        cell.setBorder(color: UIColor.red)
         
         return cell
     }
+
 
 }
