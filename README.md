@@ -1,3 +1,5 @@
+# Updated to Swift 4.1, Xcode 9.4
+
 # UICollectionView section background
 
 This project shows how to apply colour to background sections (or cells) on a `UICollectionView`. The code is written in Swift, and inspired by Eric [Chapman's article](http://www.ericjchapman.com/ios-changing-the-section-background-color-in-a-uicollectionview.html) (Objective-C [GitHub project](https://github.com/ericchapman/ios_decoration_view)).
